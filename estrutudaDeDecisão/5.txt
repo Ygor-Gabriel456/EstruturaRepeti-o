@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Supermercado {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double total = 0.0; 
+        String cpf;
+
+        System.out.print("Digite o CPF do cliente: ");
+        cpf = scanner.nextLine(); 
+
+        while (true) { 
+            System.out.print("Digite o preço do produto (ou 'O' para finalizar): ");
+            String input = scanner.nextLine(); 
+
+            if (input.equalsIgnoreCase("O")) { 
+                break; // Finaliza o loop
+            }
+
+            try {
+                double preco = Double.parseDouble(input); // Converte a entrada para double
+                total += preco; 
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor, insira um valor numérico válido ou 'O' para finalizar.");
+            }
+        }
+
+        System.out.printf("O valor total a ser pago é: R$ %.2f%n", total); 
+        scanner.close();
+    }
+}

@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class NotasAlunos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int contador = 0;     
+        double soma = 0.0;    
+        double maiorNota = 0.0; 
+        
+        while (contador < 10) {
+            System.out.print("Digite a nota do aluno " + (contador + 1) + ": ");
+            double nota = scanner.nextDouble();
+            
+            soma += nota; 
+
+            if (nota > maiorNota) {
+                maiorNota = nota;
+            }
+            
+            contador++; 
+        }
+        
+        double media = soma / 10; 
+        
+        System.out.println("A média da turma é: " + media);
+        System.out.println("A maior nota é: " + maiorNota);
+        
+        scanner.close();
+    }
+}
+
+for é mais facil de se ler e entender, além de ser mais compacto
